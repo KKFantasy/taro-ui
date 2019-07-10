@@ -9,6 +9,8 @@ export interface Props {
 
   marks: Array<Calendar.Mark>
 
+  subscripts: Object
+
   isSwiper: boolean
 
   minDate?: Calendar.DateArg

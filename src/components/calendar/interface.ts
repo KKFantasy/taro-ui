@@ -57,6 +57,8 @@ export interface DefaultProps {
 
   marks: Array<Calendar.Mark>
 
+  subscripts: Object
+
   currentDate: Calendar.DateArg | Calendar.SelectedDate
 
   monthFormat: string

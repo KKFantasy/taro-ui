@@ -19,6 +19,7 @@ import { DefaultProps, Props, State, PropsWithDefaults } from './interface'
 const defaultProps: DefaultProps = {
   validDates: [],
   marks: [],
+  subscripts: {},
   isSwiper: true,
   hideArrow: false,
   isVertical: false,
@@ -284,6 +285,7 @@ export default class AtCalendar extends Taro.Component<Props, Readonly<State>> {
     const {
       validDates,
       marks,
+      subscripts,
       format,
       minDate,
       maxDate,
@@ -310,6 +312,7 @@ export default class AtCalendar extends Taro.Component<Props, Readonly<State>> {
         <AtCalendarBody
           validDates={validDates}
           marks={marks}
+          subscripts={subscripts}
           format={format}
           minDate={minDate}
           maxDate={maxDate}

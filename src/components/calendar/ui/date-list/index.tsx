@@ -39,6 +39,7 @@ export default class AtCalendarList extends Taro.Component<Props> {
 
   render () {
     const { list } = this.props
+    
 
     if (!list || list.length === 0) return null
 
@@ -69,6 +70,7 @@ export default class AtCalendarList extends Taro.Component<Props> {
               <View className='container-text'>{item.text}</View>
             </View>
             <View className='flex__item-extra extra'>
+              {item.subscripts && <View className='extra-subtext'>{item.subscripts[item.value] || ''}</View>}
               {item.marks && item.marks.length > 0 ? (
                 <View className='extra-marks'>
                   {item.marks.map((mark, key) => (

@@ -29,6 +29,8 @@ declare namespace Calendar {
 
     marks: Array<Mark>
 
+    subscripts: Object
+
     isActive?: boolean
 
     isToday?: boolean
@@ -50,6 +52,8 @@ declare namespace Calendar {
     validDates: Array<ValidDate>
 
     marks: Array<Mark>
+
+    subscripts: Object
 
     format: string
 

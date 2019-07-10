@@ -7,7 +7,7 @@ import * as constant from './constant'
 
 const TOTAL = 7 * 6
 
-function getFullItem (
+function getFullItem(
   item: Partial<Calendar.Item>,
   options: Calendar.GroupOptions,
   selectedDate: Calendar.SelectedDate,
@@ -18,20 +18,20 @@ function getFullItem (
   const bindedPlugins = plugins.map(fn =>
     fn.bind(null, {
       options,
-      selectedDate
+      selectedDate,
     })
   )
   return _flow(bindedPlugins)(item)
 }
 
-export default function generateCalendarGroup (
+export default function generateCalendarGroup(
   options: Calendar.GroupOptions
 ): (
-    generateDate: number,
-    selectedDate: Calendar.SelectedDate,
-    isShowStatus?: boolean
-  ) => Calendar.ListInfo<Calendar.Item> {
-  return function (
+  generateDate: number,
+  selectedDate: Calendar.SelectedDate,
+  isShowStatus?: boolean
+) => Calendar.ListInfo<Calendar.Item> {
+  return function(
     generateDate: number,
     selectedDate: Calendar.SelectedDate,
     isShowStatus?: boolean
@@ -57,10 +57,11 @@ export default function generateCalendarGroup (
 
       let item = {
         marks: [],
+        subscripts: {},
         _value: thisDate,
         text: thisDate.date(),
         type: constant.TYPE_PRE_MONTH,
-        value: thisDate.format(format)
+        value: thisDate.format(format),
       }
 
       item = getFullItem(item, options, selectedDate, isShowStatus)
@@ -74,10 +75,11 @@ export default function generateCalendarGroup (
       const thisDate = firstDate.add(i, 'day').startOf('day')
       let item = {
         marks: [],
+        subscripts: {},
         _value: thisDate,
         text: thisDate.date(),
         type: constant.TYPE_NOW_MONTH,
-        value: thisDate.format(format)
+        value: thisDate.format(format),
       }
 
       item = getFullItem(item, options, selectedDate, isShowStatus)
@@ -91,10 +93,11 @@ export default function generateCalendarGroup (
       const thisDate = lastDate.add(i++, 'day').startOf('day')
       let item = {
         marks: [],
+        subscripts: {},
         _value: thisDate,
         text: thisDate.date(),
         type: constant.TYPE_NEXT_MONTH,
-        value: thisDate.format(format)
+        value: thisDate.format(format),
       }
 
       item = getFullItem(item, options, selectedDate, isShowStatus)
@@ -104,11 +107,11 @@ export default function generateCalendarGroup (
 
     return {
       list,
-      value: generateDate
+      value: generateDate,
     }
   }
 }
 
-export function getGenerateDate (date: Calendar.DateArg | undefined): Dayjs {
+export function getGenerateDate(date: Calendar.DateArg | undefined): Dayjs {
   return dayjs(date).startOf('month')
 }

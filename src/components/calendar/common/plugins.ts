@@ -9,7 +9,7 @@ interface PluginArg {
   selectedDate: Calendar.SelectedDate
 }
 
-export function handleActive (
+export function handleActive(
   args: PluginArg,
   item: Calendar.Item
 ): Calendar.Item {
@@ -34,7 +34,31 @@ export function handleActive (
   return item
 }
 
-export function handleMarks (
+export function handleSubscripts(
+  args: PluginArg,
+  item: Calendar.Item
+): Calendar.Item {
+  const { options } = args
+  const { _value } = item
+  const { subscripts } = options
+
+  let obj = {}
+  for (const key in subscripts) {
+    if (subscripts.hasOwnProperty(key)) {
+      const v = subscripts[key]
+      let newKey = dayjs(key)
+        .startOf('day')
+        .format('YYYY-MM-DD')
+      obj[newKey] = v
+    }
+  }
+
+  item.subscripts = obj
+
+  return item
+}
+
+export function handleMarks(
   args: PluginArg,
   item: Calendar.Item
 ): Calendar.Item {
@@ -85,7 +109,7 @@ export function handleMarks (
 //   return item
 // }
 
-export function handleDisabled (
+export function handleDisabled(
   args: PluginArg,
   item: Calendar.Item
 ): Calendar.Item {
@@ -103,7 +127,7 @@ export function handleDisabled (
   return item
 }
 
-export function handleValid (
+export function handleValid(
   args: PluginArg,
   item: Calendar.Item
 ): Calendar.Item {
@@ -113,7 +137,9 @@ export function handleValid (
 
   if (!_isEmpty(validDates)) {
     const isInclude = validDates.some(date => {
-      return dayjs(date.value).startOf('day').isSame(_value)
+      return dayjs(date.value)
+        .startOf('day')
+        .isSame(_value)
     })
 
     item.isDisabled = !isInclude
@@ -124,4 +150,10 @@ export function handleValid (
   return item
 }
 
-export default [handleActive, handleMarks, handleDisabled, handleValid]
+export default [
+  handleActive,
+  handleMarks,
+  handleDisabled,
+  handleValid,
+  handleSubscripts,
+]

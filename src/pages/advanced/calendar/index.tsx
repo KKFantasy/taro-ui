@@ -12,7 +12,7 @@ import AtCalendar from '../../../components/calendar/index'
 
 export default class Index extends Component {
   config: Config = {
-    navigationBarTitleText: 'Taro日历组件展示'
+    navigationBarTitleText: 'Taro日历组件展示',
   }
 
   state = {
@@ -20,68 +20,86 @@ export default class Index extends Component {
     minDate: '2018/06/11',
     maxDate: '2020/12/12',
     multiCurentDate: {
-      start: Date.now()
+      start: Date.now(),
     },
     mark: [
       {
-        value: '2018/11/11'
-      }
+        value: '2019/07/11',
+      },
+      {
+        value: '2019/07/12',
+      },
     ],
+    subscripts: {
+      '2019-07-10': '22组',
+      '2019.07.11': '22组',
+      '20190715': '34组',
+      1563465643134: '15组',
+      '20190724': '5组',
+    },
     validDates: [
       {
-        value: '2019/04/17'
+        value: '2019/04/17',
       },
       {
-        value: '2019/04/21'
+        value: '2019/04/21',
       },
       {
-        value: '2019/05/04'
+        value: '2019/05/04',
       },
       {
-        value: '2019/05/28'
-      }
-    ]
+        value: '2019/05/28',
+      },
+    ],
   }
 
-  componentWillMount () {}
+  componentWillMount() {}
 
-  componentDidMount () {}
+  componentDidMount() {}
 
-  componentWillUnmount () {}
+  componentWillUnmount() {}
 
-  componentDidShow () {}
+  componentDidShow() {}
 
-  componentDidHide () {}
+  componentDidHide() {}
 
   @bind
-  handleClick (key: string, value: string) {
+  handleClick(key: string, value: string) {
     this.setState({
-      [key]: value
+      [key]: value,
     })
   }
 
   @bind
-  handleDayClick (...arg) {
+  handleDayClick(...arg) {
     console.log('handleDayClick', arg)
   }
 
   @bind
-  handleDayLongClick (...arg) {
+  handleDayLongClick(...arg) {
     console.log('handleDayLongClick', arg)
   }
 
   @bind
-  handleDateChange (arg) {
+  handleDateChange(arg) {
     console.log('handleDateChange', arg)
   }
 
   @bind
-  handleMonthChange (arg) {
+  handleMonthChange(arg) {
     console.log('handleMonthChange', arg)
   }
 
-  render () {
-    const { now, minDate, maxDate, mark, multiCurentDate, validDates } = this.state
+  render() {
+    const {
+      now,
+      minDate,
+      maxDate,
+      mark,
+      multiCurentDate,
+      validDates,
+      subscripts,
+    } = this.state
     return (
       <View className='page calendar-page'>
         <DocsHeader title='Calendar 日历' />
@@ -90,11 +108,14 @@ export default class Index extends Component {
           <View className='panel'>
             <View className='panel__title'>一般案例</View>
             <View className='panel__content'>
-              <AtCalendar onMonthChange={this.handleMonthChange} />
+              <AtCalendar
+                onMonthChange={this.handleMonthChange}
+                subscripts={subscripts}
+              />
             </View>
           </View>
 
-          <View className='panel'>
+          {/* <View className='panel'>
             <View className='panel__title'>跳转到指定日期</View>
             <View className='panel__content'>
               <AtCalendar currentDate={now} />
@@ -198,7 +219,7 @@ export default class Index extends Component {
             <View className='panel__content'>
               <AtCalendar validDates={validDates}/>
             </View>
-          </View>
+          </View> */}
         </View>
       </View>
     )

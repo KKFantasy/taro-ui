@@ -20,6 +20,7 @@ const ANIMTE_DURATION: number = 300
 
 const defaultProps: Partial<Props> = {
   marks: [],
+  subscripts: {},
   selectedDate: {
     end: Date.now(),
     start: Date.now()
@@ -54,6 +55,7 @@ export default class AtCalendarBody extends Taro.Component<
     const {
       validDates,
       marks,
+      subscripts,
       format,
       minDate,
       maxDate,
@@ -68,6 +70,7 @@ export default class AtCalendarBody extends Taro.Component<
       minDate,
       maxDate,
       marks,
+      subscripts,
       selectedDates
     })
     const listGroup = this.getGroups(generateDate, selectedDate)
@@ -118,6 +121,7 @@ export default class AtCalendarBody extends Taro.Component<
     const {
       validDates,
       marks,
+      subscripts,
       format,
       minDate,
       maxDate,
@@ -132,6 +136,7 @@ export default class AtCalendarBody extends Taro.Component<
       minDate,
       maxDate,
       marks,
+      subscripts,
       selectedDates
     })
     const listGroup = this.getGroups(generateDate, selectedDate)
