@@ -61,7 +61,7 @@
   "homepage": "https://taro-ui.aotu.io",
   "repository": {
     "type": "git",
-    "url": "git@github.com:nervjs/taro-ui.git"
+    "url": "git@github.com:KKFantasy/taro-ui.git"
   },
   "license": "MIT",
   "dependencies": {
