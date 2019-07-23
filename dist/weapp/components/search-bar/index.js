@@ -3,10 +3,10 @@ import { View, Text, Input, Image } from '@tarojs/components'
 import classNames from 'classnames'
 import PropTypes from 'prop-types'
 import AtComponent from '../../common/component'
-import searchPng from './search.png';
+import searchPng from './search.png'
 
 class AtSearchBar extends AtComponent {
-  constructor(props) {
+  constructor (props) {
     super(...arguments)
     this.state = {
       isFocus: props.focus
@@ -41,7 +41,7 @@ class AtSearchBar extends AtComponent {
 
   handleActionClick = (...arg) => this.props.onActionClick(...arg)
 
-  render() {
+  render () {
     const {
       value,
       placeholder,
@@ -52,7 +52,8 @@ class AtSearchBar extends AtComponent {
       showActionButton,
       actionName,
       className,
-      customStyle
+      customStyle,
+      showClearButton
     } = this.props
     const { isFocus } = this.state
     const fontSize = 14
@@ -78,7 +79,7 @@ class AtSearchBar extends AtComponent {
       actionStyle.marginRight = `0`
     }
 
-    const clearIconStyle = { display: 'flex' }
+    const clearIconStyle = { display: showClearButton ? 'flex' : 'none' }
     const placeholderStyle = { visibility: 'hidden' }
     if (!value.length) {
       clearIconStyle.display = 'none'
@@ -152,6 +153,7 @@ AtSearchBar.defaultProps = {
   onBlur: () => { },
   onConfirm: () => { },
   onActionClick: () => { },
+  showClearButton: true,
 }
 
 AtSearchBar.propTypes = {
@@ -168,7 +170,8 @@ AtSearchBar.propTypes = {
   onBlur: PropTypes.func,
   onConfirm: PropTypes.func,
   onActionClick: PropTypes.func,
-  onClear: PropTypes.func
+  onClear: PropTypes.func,
+  showClearButton: PropTypes.bool
 }
 
 export default AtSearchBar

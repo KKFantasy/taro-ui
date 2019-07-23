@@ -64,6 +64,7 @@ export default class Index extends Taro.Component {
                   value={this.state.value2}
                   onChange={this.onChange.bind(this, 'value2')}
                   onActionClick={this.onActionClick.bind(this)}
+                  showClearButton={false}
                 />
               </View>
             </View>

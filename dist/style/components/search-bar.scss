@@ -16,7 +16,7 @@ $at-search-bar-placeholder-wrap-padding: 24px;
 $at-search-bar-input-bg-color: #f3f3f3;
 $at-search-bar-input-color: $color-black-0;
 // $at-search-bar-placholder-color: $color-grey-2;
-$at-search-bar-placholder-color: #777777;
+$at-search-bar-placholder-color: #777;
 
 .at-search-bar {
   display: flex;
@@ -69,8 +69,6 @@ $at-search-bar-placholder-color: #777777;
     color: $at-search-bar-placholder-color;
     font-size: $at-search-bar-font-size;
     flex-shrink: 0;
-
-    font-family: PingFangSC-Regular;
     font-weight: 400;
   }
 
@@ -118,9 +116,7 @@ $at-search-bar-placholder-color: #777777;
     // background-color: $at-search-bar-btn-bg-color;
     transition: margin-right 0.3s, opacity 0.3s;
     opacity: 0;
-
     font-size: 24px;
-    font-family: PingFangSC-Regular;
     font-weight: 400;
     color: rgba(0, 0, 0, 1);
   }

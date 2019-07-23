@@ -18,6 +18,8 @@ export interface AtSearchBarProps extends AtComponent {
 
   showActionButton?: boolean
 
+  showClearButton?: boolean
+
   actionName?: string
 
   onChange: (value: string, event: CommonEvent) => void

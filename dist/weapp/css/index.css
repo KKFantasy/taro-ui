@@ -9281,19 +9281,18 @@
     transition: flex 0.3s;
     transition: flex 0.3s, -webkit-box-flex 0.3s, -webkit-flex 0.3s, -ms-flex 0.3s; }
     .at-search-bar__placeholder-wrap .at-icon {
-      color: #777777;
+      color: #777;
       font-size: 30rpx;
       -webkit-flex-shrink: 0;
           -ms-flex-negative: 0;
               flex-shrink: 0; }
   .at-search-bar__placeholder {
     margin-left: 12rpx;
-    color: #777777;
+    color: #777;
     font-size: 30rpx;
     -webkit-flex-shrink: 0;
         -ms-flex-negative: 0;
             flex-shrink: 0;
-    font-family: PingFangSC-Regular;
     font-weight: 400; }
   .at-search-bar__input {
     position: absolute;
@@ -9330,7 +9329,7 @@
     right: 12rpx;
     height: 60rpx;
     width: 62rpx;
-    color: #777777;
+    color: #777;
     font-size: 30rpx;
     line-height: 0;
     vertical-align: middle; }
@@ -9350,7 +9349,6 @@
     transition: margin-right 0.3s, opacity 0.3s;
     opacity: 0;
     font-size: 24rpx;
-    font-family: PingFangSC-Regular;
     font-weight: 400;
     color: black; }
   .at-search-bar--fixed {
