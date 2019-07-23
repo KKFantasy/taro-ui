@@ -9,7 +9,7 @@ import * as constant from '../../common/constant'
 const MAP: { [key: number]: string } = {
   [constant.TYPE_PRE_MONTH]: 'pre',
   [constant.TYPE_NOW_MONTH]: 'now',
-  [constant.TYPE_NEXT_MONTH]: 'next'
+  [constant.TYPE_NEXT_MONTH]: 'next',
 }
 
 export interface Props {
@@ -24,22 +24,21 @@ export default class AtCalendarList extends Taro.Component<Props> {
   static options = { addGlobalClass: true }
 
   @bind
-  handleClick (item) {
+  handleClick(item) {
     if (_isFunction(this.props.onClick)) {
       this.props.onClick(item)
     }
   }
 
   @bind
-  handleLongClick (item) {
+  handleLongClick(item) {
     if (_isFunction(this.props.onLongClick)) {
       this.props.onLongClick(item)
     }
   }
 
-  render () {
+  render() {
     const { list } = this.props
-    
 
     if (!list || list.length === 0) return null
 
@@ -62,7 +61,7 @@ export default class AtCalendarList extends Taro.Component<Props> {
                 'flex__item--blur':
                   item.isDisabled ||
                   item.type === constant.TYPE_PRE_MONTH ||
-                  item.type === constant.TYPE_NEXT_MONTH
+                  item.type === constant.TYPE_NEXT_MONTH,
               }
             )}
           >
@@ -70,11 +69,17 @@ export default class AtCalendarList extends Taro.Component<Props> {
               <View className='container-text'>{item.text}</View>
             </View>
             <View className='flex__item-extra extra'>
-              {item.subscripts && <View className='extra-subtext'>{item.subscripts[item.value] || ''}</View>}
+              {item.subscripts && (
+                <View className='extra-subtext'>
+                  {item.subscripts[item.value] || ''}
+                </View>
+              )}
               {item.marks && item.marks.length > 0 ? (
                 <View className='extra-marks'>
                   {item.marks.map((mark, key) => (
-                    <Text key={key} className='mark'>{mark}</Text>
+                    <Text key={key} className='mark'>
+                      {mark}
+                    </Text>
                   ))}
                 </View>
               ) : null}

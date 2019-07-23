@@ -1,11 +1,12 @@
 import Taro from '@tarojs/taro'
-import { View, Text, Input } from '@tarojs/components'
+import { View, Text, Input, Image } from '@tarojs/components'
 import classNames from 'classnames'
 import PropTypes from 'prop-types'
 import AtComponent from '../../common/component'
+import searchPng from './search.png';
 
 class AtSearchBar extends AtComponent {
-  constructor (props) {
+  constructor(props) {
     super(...arguments)
     this.state = {
       isFocus: props.focus
@@ -40,7 +41,7 @@ class AtSearchBar extends AtComponent {
 
   handleActionClick = (...arg) => this.props.onActionClick(...arg)
 
-  render () {
+  render() {
     const {
       value,
       placeholder,
@@ -95,7 +96,8 @@ class AtSearchBar extends AtComponent {
             className='at-search-bar__placeholder-wrap'
             style={placeholderWrapStyle}
           >
-            <Text className='at-icon at-icon-search'></Text>
+            {/* <Text className='at-icon at-icon-search'></Text> */}
+            <Image style={{ width: Taro.pxTransform(32), height: Taro.pxTransform(32) }} src={searchPng}></Image>
             <Text
               className='at-search-bar__placeholder'
               style={placeholderStyle}
@@ -144,12 +146,12 @@ AtSearchBar.defaultProps = {
   focus: false,
   disabled: false,
   showActionButton: false,
-  actionName: '搜索',
-  onChange: () => {},
-  onFocus: () => {},
-  onBlur: () => {},
-  onConfirm: () => {},
-  onActionClick: () => {},
+  actionName: '取消',
+  onChange: () => { },
+  onFocus: () => { },
+  onBlur: () => { },
+  onConfirm: () => { },
+  onActionClick: () => { },
 }
 
 AtSearchBar.propTypes = {

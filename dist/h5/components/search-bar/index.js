@@ -1,9 +1,10 @@
 import Nerv from "nervjs";
 import Taro from "@tarojs/taro-h5";
-import { View, Text, Input } from '@tarojs/components';
+import { View, Text, Input, Image } from '@tarojs/components';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import AtComponent from "../../common/component";
+import searchPng from './search.png';
 
 class AtSearchBar extends AtComponent {
   constructor(props) {
@@ -85,7 +86,8 @@ class AtSearchBar extends AtComponent {
     return <View className={rootCls} style={customStyle}>
         <View className="at-search-bar__input-cnt">
           <View className="at-search-bar__placeholder-wrap" style={placeholderWrapStyle}>
-            <Text className="at-icon at-icon-search"></Text>
+            {/* <Text className='at-icon at-icon-search'></Text> */}
+            <Image style={{ width: Taro.pxTransform(32), height: Taro.pxTransform(32) }} src={searchPng}></Image>
             <Text className="at-search-bar__placeholder" style={placeholderStyle}>
               {isFocus ? '' : placeholder}
             </Text>
@@ -110,7 +112,7 @@ AtSearchBar.defaultProps = {
   focus: false,
   disabled: false,
   showActionButton: false,
-  actionName: '搜索',
+  actionName: '取消',
   onChange: () => {},
   onFocus: () => {},
   onBlur: () => {},
