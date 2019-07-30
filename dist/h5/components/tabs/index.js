@@ -151,12 +151,12 @@ export default class AtTabs extends AtComponent {
       _scrollIntoView
     } = this.state;
 
-    const heightStyle = { height };
-    const underlineStyle = {
-      height: tabDirection === 'vertical' ? `${tabList.length * 100}%` : '1PX',
-      width: tabDirection === 'horizontal' ? `${tabList.length * 100}%` : '1PX'
-    };
-    const bodyStyle = {};
+    const heightStyle = { height
+      // const underlineStyle = {
+      //   height: tabDirection === 'vertical' ? `${tabList.length * 100}%` : '1PX',
+      //   width: tabDirection === 'horizontal' ? `${tabList.length * 100}%` : '1PX'
+      // }
+    };const bodyStyle = {};
     let transformStyle = `translate3d(0px, -${current * 100}%, 0px)`;
     if (tabDirection === 'horizontal') {
       transformStyle = `translate3d(-${current * 100}%, 0px, 0px)`;

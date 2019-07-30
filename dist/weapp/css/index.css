@@ -10880,16 +10880,16 @@
     -webkit-flex: 1;
         -ms-flex: 1;
             flex: 1;
-    padding: 24rpx 24rpx;
+    padding: 0 24rpx;
     color: #333;
     font-size: 28rpx;
     font-weight: 400;
     -o-text-overflow: ellipsis;
        text-overflow: ellipsis;
     overflow: hidden;
-    -webkit-transition: all 0.25s;
-    -o-transition: all 0.25s;
-    transition: all 0.25s;
+    -webkit-transition: all 0.15s;
+    -o-transition: all 0.15s;
+    transition: all 0.15s;
     min-height: 80rpx;
     display: -webkit-box;
     display: -webkit-flex;
@@ -10915,14 +10915,14 @@
       bottom: 8rpx;
       width: 60rpx;
       height: 1PX;
-      background-color: #ff3333;
+      background-color: #f33;
       translate: -50% 0;
       -webkit-transform: scaleX(0);
           -ms-transform: scaleX(0);
               transform: scaleX(0);
-      -webkit-transition: all 0.15s;
-      -o-transition: all 0.15s;
-      transition: all 0.15s;
+      -webkit-transition: all 0.25s;
+      -o-transition: all 0.25s;
+      transition: all 0.25s;
       border-radius: 4rpx; }
     .at-tabs__item--active {
       font-weight: 600;

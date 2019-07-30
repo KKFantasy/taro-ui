@@ -44,7 +44,7 @@ export default class Index extends Taro.Component {
           <View className='panel'>
             <View className='panel__title'>等宽标签栏</View>
             <View className='panel__content'>
-              <AtTabs swipeable={false} current={current1} tabList={tabList1} onClick={this.handleClick.bind(this, 'current1')}>
+              <AtTabs style={{ height: '100px', backgroundColor: 'gray' }} swipeable={false} current={current1} tabList={tabList1} onClick={this.handleClick.bind(this, 'current1')}>
                 {/* <AtTabsPane current={current1} index={0} >
                   <View className='tab-content'>标签页一的内容</View>
                 </AtTabsPane>
