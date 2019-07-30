@@ -25,9 +25,9 @@ export default class Index extends Taro.Component {
   }
   render () {
     const { current1, current2, current3, current4, current5 } = this.state
-    const tabList1 = [{ title: '标签页1' }, { title: '标签页2' }, { title: '标签页3' }]
+    const tabList1 = [{ title: '标签页342341' }, { title: '标签页2' }, { title: '标签页3' }]
     const tabList2 = [
-      { title: '标签页1' },
+      { title: '标签页18734' },
       { title: '标签页2' },
       { title: '标签页3' },
       { title: '标签页4' },
@@ -45,7 +45,7 @@ export default class Index extends Taro.Component {
             <View className='panel__title'>等宽标签栏</View>
             <View className='panel__content'>
               <AtTabs swipeable={false} current={current1} tabList={tabList1} onClick={this.handleClick.bind(this, 'current1')}>
-                <AtTabsPane current={current1} index={0} >
+                {/* <AtTabsPane current={current1} index={0} >
                   <View className='tab-content'>标签页一的内容</View>
                 </AtTabsPane>
                 <AtTabsPane current={current1} index={1}>
@@ -53,7 +53,7 @@ export default class Index extends Taro.Component {
                 </AtTabsPane>
                 <AtTabsPane current={current1} index={2}>
                   <View className='tab-content'>标签页三的内容</View>
-                </AtTabsPane>
+                </AtTabsPane> */}
               </AtTabs>
             </View>
           </View>

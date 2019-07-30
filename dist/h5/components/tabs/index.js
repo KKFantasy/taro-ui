@@ -196,7 +196,7 @@ export default class AtTabs extends AtComponent {
               {tabItems}
             </View>}
         <View className="at-tabs__body" onTouchStart={this.handleTouchStart.bind(this)} onTouchEnd={this.handleTouchEnd.bind(this)} onTouchMove={this.handleTouchMove.bind(this)} style={this.mergeStyle(bodyStyle, heightStyle)}>
-          <View className="at-tabs__underline" style={underlineStyle}></View>
+          {/* <View className='at-tabs__underline' style={underlineStyle}></View> */}
           {this.props.children}
         </View>
       </View>;

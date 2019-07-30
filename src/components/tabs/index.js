@@ -150,10 +150,10 @@ export default class AtTabs extends AtComponent {
     } = this.state
 
     const heightStyle = { height }
-    const underlineStyle = {
-      height: tabDirection === 'vertical' ? `${tabList.length * 100}%` : '1PX',
-      width: tabDirection === 'horizontal' ? `${tabList.length * 100}%` : '1PX'
-    }
+    // const underlineStyle = {
+    //   height: tabDirection === 'vertical' ? `${tabList.length * 100}%` : '1PX',
+    //   width: tabDirection === 'horizontal' ? `${tabList.length * 100}%` : '1PX'
+    // }
     const bodyStyle = { }
     let transformStyle = `translate3d(0px, -${current * 100}%, 0px)`
     if (tabDirection === 'horizontal') {
@@ -226,7 +226,7 @@ export default class AtTabs extends AtComponent {
           onTouchMove={this.handleTouchMove.bind(this)}
           style={this.mergeStyle(bodyStyle, heightStyle)}
         >
-          <View className='at-tabs__underline' style={underlineStyle}></View>
+          {/* <View className='at-tabs__underline' style={underlineStyle}></View> */}
           {this.props.children}
         </View>
       </View>

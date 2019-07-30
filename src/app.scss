@@ -1,3 +1,11 @@
+/* Tabs */
+$at-tabs-color: #777 !default;
+$at-tabs-color-active: #000 !default;
+$at-tabs-font-size: 30px !default;
+$at-tabs-line-height: 4px !default;
+$at-tabs-underline-color: #e5e5e5 !default;
+$at-tabs-bg-color: #fff !default;
+
 @import "./style/index.scss";
 
 #app {
