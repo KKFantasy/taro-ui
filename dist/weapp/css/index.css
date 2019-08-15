@@ -10916,21 +10916,22 @@
       width: 60rpx;
       height: 1PX;
       background-color: #f33;
-      translate: -50% 0;
-      -webkit-transform: scaleX(0);
-          -ms-transform: scaleX(0);
-              transform: scaleX(0);
-      -webkit-transition: all 0.25s;
-      -o-transition: all 0.25s;
-      transition: all 0.25s;
+      -webkit-transform: scaleX(0) translateX(-50%);
+          -ms-transform: scaleX(0) translateX(-50%);
+              transform: scaleX(0) translateX(-50%);
+      -webkit-transition: -webkit-transform 0.25s;
+      transition: -webkit-transform 0.25s;
+      -o-transition: transform 0.25s;
+      transition: transform 0.25s;
+      transition: transform 0.25s, -webkit-transform 0.25s;
       border-radius: 4rpx; }
     .at-tabs__item--active {
       font-weight: 600;
       color: #6190E8; }
       .at-tabs__item--active .at-tabs__item-underline {
-        -webkit-transform: scaleX(1);
-            -ms-transform: scaleX(1);
-                transform: scaleX(1); }
+        -webkit-transform: scaleX(1) translateX(-50%);
+            -ms-transform: scaleX(1) translateX(-50%);
+                transform: scaleX(1) translateX(-50%); }
   .at-tabs__header {
     position: relative;
     display: -webkit-box;
